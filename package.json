@@ -41,7 +41,8 @@
 		"jscs": "^1.13.1",
 		"nsp": "^1.0.3",
 		"eslint": "^0.23.0",
-		"semver": "^4.3.6"
+		"semver": "^4.3.6",
+		"object.assign": "^3.0.0"
 	},
 	"testling": {
 		"files": "test.js",

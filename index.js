@@ -6,12 +6,25 @@ var protochain = require('protochain');
 
 var concat = Array.prototype.concat;
 var hasOwn = Object.prototype.hasOwnProperty;
+var isEnumerable = Object.prototype.propertyIsEnumerable;
+
+var getDescriptor = function getDescriptor(object, key) {
+	if (Object.getOwnPropertyDescriptor) {
+		return Object.getOwnPropertyDescriptor(object, key);
+	}
+	return {
+		enumerable: isEnumerable.call(object, key),
+		writable: true,
+		configurable: false,
+		value: object[key]
+	};
+};
 
 var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
     var props = [];
 	var addTupleIfValue = function addTupleIfValue(key) {
 		if (is(object[key], value)) {
-			props.push([object, key]);
+			props.push([object, key, getDescriptor(object, key)]);
 		}
 	};
 	if (Object.getOwnPropertyNames) {

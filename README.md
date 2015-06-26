@@ -10,7 +10,7 @@
 
 [![browser support][9]][10]
 
-Given an object, and a value, return a tuple of the property name, and the object on which it is an own property.
+Given an object, and a value, return a tuple of the property name, the object on which it is an own property, and the property descriptor.
 
 Works with string keys, Symbol keys, both enumerable and non-enumerable keys, and crawls up the prototype chain to find the exact object it's located on.
 
@@ -39,10 +39,10 @@ Foo.prototype[symbol] = value;
 var tuples = findValue(new Foo(), value);
 
 assert.deepEqual(tuples, [
-	[Foo.prototype, 'property'],
-	[Foo.prototype, symbol],
-	[Function.prototype, 'property'],
-	[Object.prototype, 'property']
+	[Foo.prototype, 'property', Object.getOwnPropertyDescriptor(Foo.prototype, 'property')],
+	[Foo.prototype, symbol, Object.getOwnPropertyDescriptor(Foo.prototype, symbol)],
+	[Function.prototype, 'property', Object.getOwnPropertyDescriptor(Function.prototype, 'property')],
+	[Object.prototype, 'property', Object.getOwnPropertyDescriptor(Object.prototype, 'property')]
 ]);
 ```
 
