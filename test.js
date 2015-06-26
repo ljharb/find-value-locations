@@ -59,9 +59,13 @@ test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 		[Baz.prototype, 'property']
 	], 'new Foo has string and symbol properties that hold "value"');
 
-	t.deepEqual(findValue([], Array.prototype[Symbol.iterator]), [
+	var expectedTuples = [
 		[Array.prototype, Symbol.iterator]
-	], 'Array has default iterator');
+	];
+	if ('values' in Array.prototype) {
+		expectedTuples.unshift([Array.prototype, 'values']);
+	}
+	t.deepEqual(findValue([], Array.prototype[Symbol.iterator]), expectedTuples, 'Array has default iterator');
 
 	t.end();
 });
