@@ -3,9 +3,9 @@
 var is = require('object-is');
 var forEach = require('foreach');
 var protochain = require('protochain');
+var keys = require('object-keys');
 
 var concat = Array.prototype.concat;
-var hasOwn = Object.prototype.hasOwnProperty;
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 
 var getDescriptor = function getDescriptor(object, key) {
@@ -30,11 +30,7 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 	if (Object.getOwnPropertyNames) {
 		forEach(Object.getOwnPropertyNames(object), addTupleIfValue);
 	} else {
-		for (var key in object) {
-			if (hasOwn.call(object, key)) {
-				addTupleIfValue(object, key);
-			}
-		}
+		forEach(keys(object), function (key) { addTupleIfValue(object, key); });
 	}
 	if (Object.getOwnPropertySymbols) {
 		forEach(Object.getOwnPropertySymbols(object), addTupleIfValue);
