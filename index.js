@@ -20,9 +20,15 @@ var getDescriptor = function getDescriptor(object, key) {
 	};
 };
 
+var functionProto = Function.prototype;
+
 var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
     var props = [];
 	var addTupleIfValue = function addTupleIfValue(key) {
+		if (object === functionProto && (key === 'arguments' || key === 'caller')) {
+			// v8 in iojs v3/Chrome will throw on Function.prototype.{arguments, caller}
+			return;
+		}
 		if (is(object[key], value)) {
 			props.push([object, key, getDescriptor(object, key)]);
 		}
