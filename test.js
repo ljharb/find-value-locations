@@ -87,3 +87,15 @@ test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 
 	t.end();
 });
+
+test('does not throw when a getter throws', { skip: typeof Object.defineProperty !== 'function' }, function (t) {
+	t.doesNotThrow(function () { findValue(Function.prototype); }, 'Function.prototype.caller/arguments throw in newer v8');
+	var thrower = { boom: '!' };
+	Object.defineProperty(thrower, 'boom', {
+		enumerable: true,
+		get: function () { throw new RangeError('no property for you'); }
+	});
+	t['throws'](function () { return thrower.boom; }, RangeError, 'object with throw-on-get property throws on get');
+	t.doesNotThrow(function () { findValue(thrower); }, 'object with throw-on-get property does not throw on findValue');
+	t.end();
+});
