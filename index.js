@@ -46,7 +46,7 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 
 var findKeys = function findKey(within, value) {
 	var found = [];
-	forEach(protochain(within), function (proto) {
+	forEach([within].concat(protochain(within)), function (proto) {
 		found = concat.call(found, getOwnPropertiesWithValue(proto, value));
 	});
 	return found;

@@ -19,6 +19,17 @@ test('requires something coercible to an object', function (t) {
 
 var value = {};
 
+test('finds own properties', function (t) {
+	var toStr = Object.prototype.toString;
+	var obj = { a: toStr };
+	var tuples = findValue(obj, toStr);
+	t.deepEqual(tuples, [
+		[obj, 'a', assign({ value: toStr }, defaultDescriptor)],
+		[Object.prototype, 'toString', assign({}, defaultDescriptor, { enumerable: false, value: toStr })]
+	], 'an own property is found');
+	t.end();
+});
+
 test('finds multiple values', function (t) {
 	var Foo = function Foo() {};
 	var Bar = function Bar() {};
