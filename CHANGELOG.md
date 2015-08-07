@@ -1,3 +1,7 @@
+2.0.0 / 2015-08-06
+=================
+  * Ensure that throw-on-get properties do not cause findValue to throw.
+
 1.1.1 / 2015-08-06
 =================
   * [Fix] Make sure own properties are searched too.
