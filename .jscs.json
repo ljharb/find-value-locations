@@ -109,6 +109,10 @@
 
 	"requirePaddingNewLinesBeforeExport": true,
 
-	"requirePaddingNewLinesAfterUseStrict": true
+	"requirePaddingNewLinesAfterUseStrict": true,
+
+	"disallowArrowFunctions": true,
+
+	"validateOrderInObjectKeys": "asc-insensitive"
 }
 

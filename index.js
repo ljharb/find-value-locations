@@ -13,10 +13,10 @@ var getDescriptor = function getDescriptor(object, key) {
 		return Object.getOwnPropertyDescriptor(object, key);
 	}
 	return {
-		enumerable: isEnumerable.call(object, key),
-		writable: true,
 		configurable: false,
-		value: object[key]
+		enumerable: isEnumerable.call(object, key),
+		value: object[key],
+		writable: true
 	};
 };
 

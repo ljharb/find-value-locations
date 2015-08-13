@@ -6,8 +6,8 @@ var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 var assign = require('object.assign');
 
 var defaultDescriptor = {
-	enumerable: true,
 	configurable: true,
+	enumerable: true,
 	writable: true
 };
 
