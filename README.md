@@ -50,7 +50,7 @@ assert.deepEqual(tuples, [
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/find-value-locations
-[2]: http://vb.teelaun.ch/ljharb/find-value-locations.svg
+[2]: http://versionbadg.es/ljharb/find-value-locations.svg
 [3]: https://travis-ci.org/ljharb/find-value-locations.svg
 [4]: https://travis-ci.org/ljharb/find-value-locations
 [5]: https://david-dm.org/ljharb/find-value-locations.svg
