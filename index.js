@@ -49,7 +49,7 @@ var findKeys = function findKey(within, value) {
 };
 
 module.exports = function findValueLocation(object, value) {
-	if (typeof object === 'undefined' || object == null) {
+	if (typeof object === 'undefined' || object === null) {
 		throw new TypeError('object param must not be null or undefined');
 	}
 	return findKeys(object, value);
