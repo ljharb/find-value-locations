@@ -27,7 +27,7 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 			if (is(object[key], value)) {
 				props.push([object, key, getDescriptor(object, key)]);
 			}
-		} catch (e) {/**/}
+		} catch (e) { /**/ }
 	};
 	if (Object.getOwnPropertyNames) {
 		forEach(Object.getOwnPropertyNames(object), addTupleIfValue);
