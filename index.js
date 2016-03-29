@@ -32,7 +32,7 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 	if (Object.getOwnPropertyNames) {
 		forEach(Object.getOwnPropertyNames(object), addTupleIfValue);
 	} else {
-		forEach(keys(object), function (key) { addTupleIfValue(object, key); });
+		forEach(keys(object), addTupleIfValue);
 	}
 	if (Object.getOwnPropertySymbols) {
 		forEach(Object.getOwnPropertySymbols(object), addTupleIfValue);
