@@ -21,7 +21,7 @@ var getDescriptor = function getDescriptor(object, key) {
 };
 
 var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
-    var props = [];
+	var props = [];
 	var addTupleIfValue = function addTupleIfValue(key) {
 		try {
 			if (is(object[key], value)) {
