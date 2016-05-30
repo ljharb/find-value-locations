@@ -4,7 +4,6 @@
 	"extends": "@ljharb",
 
 	"rules": {
-		"dot-notation": [2, { "allowKeywords": false }],
 		"id-length": [2, { "min": 1, "max": 30 }],
 		"max-statements": [2, 16]
 	}

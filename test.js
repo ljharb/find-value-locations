@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint max-statements-per-line: [2, { "max": 2 }] */
+
 var test = require('tape');
 var findValue = require('./');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
