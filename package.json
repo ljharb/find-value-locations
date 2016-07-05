@@ -36,8 +36,8 @@
 	"dependencies": {
 		"foreach": "^2.0.5",
 		"object-is": "^1.0.1",
-		"object-keys": "^1.0.9",
-		"protochain": "^1.0.3"
+		"object-keys": "^1.0.11",
+		"protochain": "^1.0.5"
 	},
 	"devDependencies": {
 		"tape": "^4.6.0",
