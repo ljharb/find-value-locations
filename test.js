@@ -4,7 +4,7 @@
 
 var test = require('tape');
 var findValue = require('./');
-var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 var assign = require('object.assign');
 
 var defaultDescriptor = {
