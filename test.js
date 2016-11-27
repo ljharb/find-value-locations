@@ -1,6 +1,6 @@
 'use strict';
 
-/* eslint max-statements-per-line: [2, { "max": 2 }] */
+/* eslint max-statements-per-line: [2, { "max": 2 }], func-name-matching: 0 */
 
 var test = require('tape');
 var findValue = require('./');
@@ -80,7 +80,11 @@ test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 	], 'new Foo has string and symbol properties that hold "value"');
 
 	var expectedTuples = [
-		[Array.prototype, Symbol.iterator, assign({}, defaultDescriptor, { enumerable: false, value: Array.prototype[Symbol.iterator] })]
+		[
+			Array.prototype,
+			Symbol.iterator,
+			assign({}, defaultDescriptor, { enumerable: false, value: Array.prototype[Symbol.iterator] })
+		]
 	];
 	if ('values' in Array.prototype) {
 		expectedTuples.unshift([Array.prototype, 'values', assign({}, defaultDescriptor, { enumerable: false, value: Array.prototype.values })]);
