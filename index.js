@@ -25,7 +25,11 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 	var addTupleIfValue = function addTupleIfValueMatches(key) {
 		try {
 			if (is(object[key], value)) {
-				props.push([object, key, getDescriptor(object, key)]);
+				props.push([
+					object,
+					key,
+					getDescriptor(object, key)
+				]);
 			}
 		} catch (e) { /**/ }
 	};

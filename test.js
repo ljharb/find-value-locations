@@ -1,6 +1,11 @@
 'use strict';
 
-/* eslint max-statements-per-line: [2, { "max": 2 }], func-name-matching: 0 */
+/* eslint
+	array-bracket-newline: 0,
+	array-element-newline: 0,
+	max-statements-per-line: [2, { "max": 2 }],
+	func-name-matching: 0
+*/
 
 var test = require('tape');
 var findValue = require('./');
