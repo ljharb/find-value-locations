@@ -1,14 +1,10 @@
 'use strict';
 
 /* eslint
-	array-bracket-newline: 0,
-	array-element-newline: 0,
-	max-statements-per-line: [2, { "max": 2 }],
-	func-name-matching: 0
 */
 
 var test = require('tape');
-var findValue = require('./');
+var findValue = require('../');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 var assign = require('object.assign');
 
@@ -30,10 +26,14 @@ test('finds own properties', function (t) {
 	var toStr = Object.prototype.toString;
 	var obj = { a: toStr };
 	var tuples = findValue(obj, toStr);
-	t.deepEqual(tuples, [
-		[obj, 'a', assign({ value: toStr }, defaultDescriptor)],
-		[Object.prototype, 'toString', assign({}, defaultDescriptor, { enumerable: false, value: toStr })]
-	], 'an own property is found');
+	t.deepEqual(
+		tuples,
+		[
+			[obj, 'a', assign({ value: toStr }, defaultDescriptor)],
+			[Object.prototype, 'toString', assign({}, defaultDescriptor, { enumerable: false, value: toStr })]
+		],
+		'an own property is found'
+	);
 	t.end();
 });
 
@@ -50,14 +50,22 @@ test('finds multiple values', function (t) {
 
 	var tuples = findValue(new Foo(), value);
 
-	t.deepEqual(tuples, [
-		[Foo.prototype, 'property', assign({}, defaultDescriptor, { value: value })],
-		[Baz.prototype, 'property', assign({}, defaultDescriptor, { value: value })]
-	], 'new Foo has string properties that hold "value"');
+	t.deepEqual(
+		tuples,
+		[
+			[Foo.prototype, 'property', assign({}, defaultDescriptor, { value: value })],
+			[Baz.prototype, 'property', assign({}, defaultDescriptor, { value: value })]
+		],
+		'new Foo has string properties that hold "value"'
+	);
 
-	t.deepEqual(findValue(Number, Function.apply), [
-		[Function.prototype, 'apply', assign({}, defaultDescriptor, { enumerable: false, value: Function.apply })]
-	], 'Number has Function.apply on Function.prototype at "apply"');
+	t.deepEqual(
+		findValue(Number, Function.apply),
+		[
+			[Function.prototype, 'apply', assign({}, defaultDescriptor, { enumerable: false, value: Function.apply })]
+		],
+		'Number has Function.apply on Function.prototype at "apply"'
+	);
 
 	t.end();
 });
@@ -78,11 +86,15 @@ test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 
 	var tuples = findValue(new Foo(), value);
 
-	t.deepEqual(tuples, [
-		[Foo.prototype, 'property', assign({}, defaultDescriptor, { value: value })],
-		[Foo.prototype, sym, assign({}, defaultDescriptor, { value: value })],
-		[Baz.prototype, 'property', assign({}, defaultDescriptor, { value: value })]
-	], 'new Foo has string and symbol properties that hold "value"');
+	t.deepEqual(
+		tuples,
+		[
+			[Foo.prototype, 'property', assign({}, defaultDescriptor, { value: value })],
+			[Foo.prototype, sym, assign({}, defaultDescriptor, { value: value })],
+			[Baz.prototype, 'property', assign({}, defaultDescriptor, { value: value })]
+		],
+		'new Foo has string and symbol properties that hold "value"'
+	);
 
 	var expectedTuples = [
 		[
