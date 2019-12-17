@@ -1,3 +1,16 @@
+2.0.2 / 2019-12-17
+=================
+  * [readme] fix repo URLs, remove testling
+  * [Deps] update `object-is`, `object-keys`, `protochain`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`, `covert`, `object.assign`
+  * [Tests] use shared travis-ci configs
+  * [Tests] use `npx aud` instead of `nsp` or `npm audit` with hoops
+  * [Tests] remove `jscs`
+  * [meta] remove unused Makefile and associated utilities
+  * [meta] add `funding` field; create FUNDING.yml
+  * [meta] Only apps should have lockfiles
+  * [actions] add automatic rebasing / merge commit blocking
+
 2.0.1 / 2016-03-28
 =================
   * [Fix] fix ES3 browsers (lacking `Object.getOwnPropertyNames`)
