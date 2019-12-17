@@ -9,12 +9,11 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"pretest": "npm run --silent lint",
-		"test": "npm run --silent tests-only",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
 		"posttest": "npx aud",
 		"tests-only": "node --es-staging test",
 		"coverage": "covert test/index.js",
-		"coverage-quiet": "covert test/index.js --quiet",
 		"lint": "eslint ."
 	},
 	"repository": {
