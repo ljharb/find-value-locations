@@ -19,7 +19,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/ljharb/find-value-location.git"
+		"url": "git://github.com/ljharb/find-value-locations.git"
 	},
 	"keywords": [
 		"find",

@@ -57,8 +57,6 @@ Simply clone the repo, `npm install`, and run `npm test`
 [6]: https://david-dm.org/ljharb/find-value-locations
 [7]: https://david-dm.org/ljharb/find-value-locations/dev-status.svg
 [8]: https://david-dm.org/ljharb/find-value-locations#info=devDependencies
-[9]: https://ci.testling.com/ljharb/find-value-locations.png
-[10]: https://ci.testling.com/ljharb/find-value-locations
 [11]: https://nodei.co/npm/find-value-locations.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/find-value-locations.svg
 [license-url]: LICENSE
