@@ -35,7 +35,7 @@
 	],
 	"dependencies": {
 		"foreach": "^2.0.5",
-		"object-is": "^1.0.2",
+		"object-is": "^1.1.2",
 		"object-keys": "^1.1.1",
 		"protochain": "^1.0.5"
 	},
