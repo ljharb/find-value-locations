@@ -1,3 +1,15 @@
+2.0.3 / 2021-01-22
+=================
+  * [Robustness / Refactor] use `reflect.ownkeys` and `call-bind`
+  * [Deps] update `object-is`
+  * [meta] do not publish github action workflow files
+  * [meta] only run `aud` on prod deps
+  * [Tests] migrate tests to Github Actions
+  * [Tests] run `nyc` on all tests; use `tape` runner
+  * [actions] add "Allow Edits" workflow
+  * [actions] switch Automatic Rebase workflow to `pull_request_target` event
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `object.assign`, `tape`; add `safe-publish-latest`
+
 2.0.2 / 2019-12-17
 =================
   * [readme] fix repo URLs, remove testling
