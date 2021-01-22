@@ -33,10 +33,11 @@
 		"location"
 	],
 	"dependencies": {
+		"call-bind": "^1.0.2",
 		"foreach": "^2.0.5",
 		"object-is": "^1.1.4",
-		"object-keys": "^1.1.1",
-		"protochain": "^1.0.5"
+		"protochain": "^1.0.5",
+		"reflect.ownkeys": "^1.0.2"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.4.0",

@@ -3,18 +3,21 @@
 var is = require('object-is');
 var forEach = require('foreach');
 var protochain = require('protochain');
-var keys = require('object-keys');
+var ownKeys = require('reflect.ownkeys');
+var callBound = require('call-bind/callBound');
 
-var concat = Array.prototype.concat;
-var isEnumerable = Object.prototype.propertyIsEnumerable;
+var $concat = callBound('Array.prototype.concat');
+var $push = callBound('Array.prototype.push');
+var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
+var gOPD = Object.getOwnPropertyDescriptor;
 
 var getDescriptor = function getPropertyDescriptor(object, key) {
-	if (Object.getOwnPropertyDescriptor) {
-		return Object.getOwnPropertyDescriptor(object, key);
+	if (gOPD) {
+		return gOPD(object, key);
 	}
 	return {
 		configurable: false,
-		enumerable: isEnumerable.call(object, key),
+		enumerable: $isEnumerable(object, key),
 		value: object[key],
 		writable: true
 	};
@@ -25,7 +28,7 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 	var addTupleIfValue = function addTupleIfValueMatches(key) {
 		try {
 			if (is(object[key], value)) {
-				props.push([
+				$push(props, [
 					object,
 					key,
 					getDescriptor(object, key)
@@ -33,21 +36,14 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 			}
 		} catch (e) { /**/ }
 	};
-	if (Object.getOwnPropertyNames) {
-		forEach(Object.getOwnPropertyNames(object), addTupleIfValue);
-	} else {
-		forEach(keys(object), addTupleIfValue);
-	}
-	if (Object.getOwnPropertySymbols) {
-		forEach(Object.getOwnPropertySymbols(object), addTupleIfValue);
-	}
+	forEach(ownKeys(object), addTupleIfValue);
 	return props;
 };
 
 var findKeys = function findKey(within, value) {
 	var found = [];
-	forEach([within].concat(protochain(within)), function (proto) {
-		found = concat.call(found, getOwnPropertiesWithValue(proto, value));
+	forEach($concat([within], protochain(within)), function (proto) {
+		found = $concat(found, getOwnPropertiesWithValue(proto, value));
 	});
 	return found;
 };
