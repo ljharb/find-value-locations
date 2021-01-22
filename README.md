@@ -1,6 +1,5 @@
 # find-value-locations <sup>[![Version Badge][2]][1]</sup>
 
-[![Build Status][3]][4]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -50,15 +49,13 @@ assert.deepEqual(tuples, [
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/find-value-locations
-[2]: http://versionbadg.es/ljharb/find-value-locations.svg
-[3]: https://travis-ci.org/ljharb/find-value-locations.svg
-[4]: https://travis-ci.org/ljharb/find-value-locations
+[2]: https://versionbadg.es/ljharb/find-value-locations.svg
 [5]: https://david-dm.org/ljharb/find-value-locations.svg
 [6]: https://david-dm.org/ljharb/find-value-locations
 [7]: https://david-dm.org/ljharb/find-value-locations/dev-status.svg
 [8]: https://david-dm.org/ljharb/find-value-locations#info=devDependencies
 [11]: https://nodei.co/npm/find-value-locations.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/find-value-locations.svg
+[license-image]: https://img.shields.io/npm/l/find-value-locations.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/find-value-locations.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=find-value-locations
+[downloads-image]: https://img.shields.io/npm/dm/find-value-locations.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=find-value-locations
