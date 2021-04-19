@@ -36,7 +36,7 @@
 	"dependencies": {
 		"call-bind": "^1.0.2",
 		"foreach": "^2.0.5",
-		"object-is": "^1.1.4",
+		"object-is": "^1.1.5",
 		"protochain": "^1.0.5",
 		"reflect.ownkeys": "^1.0.2"
 	},
