@@ -1,13 +1,13 @@
-# find-value-locations <sup>[![Version Badge][2]][1]</sup>
+# find-value-locations <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][11]][1]
-
-[![browser support][9]][10]
+[![npm badge][npm-badge-png]][package-url]
 
 Given an object, and a value, return a tuple of the property name, the object on which it is an own property, and the property descriptor.
 
@@ -48,14 +48,18 @@ assert.deepEqual(tuples, [
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
 
-[1]: https://npmjs.org/package/find-value-locations
-[2]: https://versionbadg.es/ljharb/find-value-locations.svg
-[5]: https://david-dm.org/ljharb/find-value-locations.svg
-[6]: https://david-dm.org/ljharb/find-value-locations
-[7]: https://david-dm.org/ljharb/find-value-locations/dev-status.svg
-[8]: https://david-dm.org/ljharb/find-value-locations#info=devDependencies
-[11]: https://nodei.co/npm/find-value-locations.png?downloads=true&stars=true
+[package-url]: https://npmjs.org/package/find-value-locations
+[npm-version-svg]: https://versionbadg.es/ljharb/find-value-locations.svg
+[deps-svg]: https://david-dm.org/ljharb/find-value-locations.svg
+[deps-url]: https://david-dm.org/ljharb/find-value-locations
+[dev-deps-svg]: https://david-dm.org/ljharb/find-value-locations/dev-status.svg
+[dev-deps-url]: https://david-dm.org/ljharb/find-value-locations#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/find-value-locations.png?downloads=true&stars=true
 [license-image]: https://img.shields.io/npm/l/find-value-locations.svg
 [license-url]: LICENSE
 [downloads-image]: https://img.shields.io/npm/dm/find-value-locations.svg
 [downloads-url]: https://npm-stat.com/charts.html?package=find-value-locations
+[codecov-image]: https://codecov.io/gh/ljharb/find-value-locations/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/ljharb/find-value-locations/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/find-value-locations
+[actions-url]: https://github.com/ljharb/find-value-locations/actions
