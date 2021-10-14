@@ -38,7 +38,7 @@
 		"foreach": "^2.0.5",
 		"object-is": "^1.1.5",
 		"protochain": "^1.0.5",
-		"reflect.ownkeys": "^1.0.2"
+		"reflect.ownkeys": "^1.1.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^18.0.0",
