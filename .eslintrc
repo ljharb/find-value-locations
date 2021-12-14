@@ -5,16 +5,12 @@
 
 	"rules": {
 		"id-length": [2, { "min": 1, "max": 30 }],
-		"max-statements": [2, 16]
 	},
 
 	"overrides": [
 		{
 			"files": "test/**",
 			"rules": {
-				//array-bracket-newline: 0,
-				//array-element-newline: 0,
-				//max-statements-per-line: [2, { "max": 2 }],
 				func-name-matching: 0,
 			},
 		},
