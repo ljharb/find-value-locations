@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.4](https://github.com/ljharb/find-value-locations/compare/v2.0.3...v2.0.4) - 2022-10-26
+
+### Commits
+
+- [actions] reuse common workflows [`9106e9e`](https://github.com/ljharb/find-value-locations/commit/9106e9e5e9d90c982b1bae57f75904d477f43b40)
+- [actions] use `node/install` instead of `node/run`; use `codecov` action [`4ce0676`](https://github.com/ljharb/find-value-locations/commit/4ce06761e44b43e66ec6a0ebcafce0a6f4e7ca0a)
+- [meta] use `npmignore` to autogenerate an npmignore file [`eb8d290`](https://github.com/ljharb/find-value-locations/commit/eb8d290c65548335e512d2b64d0819d7f2f15ace)
+- [readme] add github actions/codecov badges; update URLs [`31bcb87`](https://github.com/ljharb/find-value-locations/commit/31bcb87083b52d8010787a2fa7f2ba7d7e862dc1)
+- [meta] add `auto-changelog` [`c5511e7`](https://github.com/ljharb/find-value-locations/commit/c5511e7bc748aa85cadf8d4b6c71adbe79c482a5)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `safe-publish-latest`, `tape` [`d4519b0`](https://github.com/ljharb/find-value-locations/commit/d4519b0e320df4e92be059597772c454dcea5974)
+- [actions] update codecov uploader [`2734bda`](https://github.com/ljharb/find-value-locations/commit/2734bda93b1a0acef21d2ff17d1a8d25fbe93803)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `object.assign`, `tape` [`38a643c`](https://github.com/ljharb/find-value-locations/commit/38a643c8bf3937eed0ff63ede2d332c19e9d16f6)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `safe-publish-latest`, `tape` [`d3d33e5`](https://github.com/ljharb/find-value-locations/commit/d3d33e54d1f7ffbf0ffdd3f05b1883e7347a0a5b)
+- [actions] update checkout action [`53bfb65`](https://github.com/ljharb/find-value-locations/commit/53bfb65a42263ea452506e8269c46b604d4bb421)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `tape` [`a81bc56`](https://github.com/ljharb/find-value-locations/commit/a81bc56b96d6fa3096714fa3503984e03c8313b1)
+- [Refactor] use `for-each` instead of `foreach` [`cd7f8e0`](https://github.com/ljharb/find-value-locations/commit/cd7f8e0d46fe79f1c3007b32374eca59c61d6a5a)
+- [meta] use `prepublishOnly` script for npm 7+ [`0195330`](https://github.com/ljharb/find-value-locations/commit/0195330a877b952e0078b7ac3a893fa850a388d9)
+- [Deps] update `foreach` [`f8cc916`](https://github.com/ljharb/find-value-locations/commit/f8cc916d08fe2d420063e88da069c29e436d5a6d)
+- [Deps] update `reflect.ownkeys` [`927a33b`](https://github.com/ljharb/find-value-locations/commit/927a33b722e342ca8e35dbd92a471c610cf15e47)
+- [Deps] update `object-is` [`64a5217`](https://github.com/ljharb/find-value-locations/commit/64a5217b6b9ac27376ad4f964b7d9b9baf36e493)
+
 <!-- auto-changelog-above -->
 
 2.0.3 / 2021-01-22
