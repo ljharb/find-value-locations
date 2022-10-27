@@ -35,7 +35,7 @@
 	],
 	"dependencies": {
 		"call-bind": "^1.0.2",
-		"foreach": "^2.0.6",
+		"for-each": "^0.3.3",
 		"object-is": "^1.1.5",
 		"protochain": "^1.0.5",
 		"reflect.ownkeys": "^1.1.0"

@@ -1,7 +1,7 @@
 'use strict';
 
 var is = require('object-is');
-var forEach = require('foreach');
+var forEach = require('for-each');
 var protochain = require('protochain');
 var ownKeys = require('reflect.ownkeys');
 var callBound = require('call-bind/callBound');
