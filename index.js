@@ -4,9 +4,9 @@ var is = require('object-is');
 var forEach = require('for-each');
 var protochain = require('protochain');
 var ownKeys = require('reflect.ownkeys');
+var safeConcat = require('safe-array-concat');
 var callBound = require('call-bind/callBound');
 
-var $concat = callBound('Array.prototype.concat');
 var $push = callBound('Array.prototype.push');
 var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
 var gOPD = Object.getOwnPropertyDescriptor;
@@ -42,8 +42,8 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 
 var findKeys = function findKey(within, value) {
 	var found = [];
-	forEach($concat([within], protochain(within)), function (proto) {
-		found = $concat(found, getOwnPropertiesWithValue(proto, value));
+	forEach(safeConcat([within], protochain(within)), function (proto) {
+		found = safeConcat(found, getOwnPropertiesWithValue(proto, value));
 	});
 	return found;
 };
