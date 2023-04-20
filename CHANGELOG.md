@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.5](https://github.com/ljharb/find-value-locations/compare/v2.0.4...v2.0.5) - 2023-04-20
+
+### Commits
+
+- [Refactor] use `safe-array-concat` [`ea5d5ca`](https://github.com/ljharb/find-value-locations/commit/ea5d5caac2a25172363f6c2b31141bb3a7881bca)
+- [Dev Deps] update `@ljharb/eslint-config`, `aud`, `tape` [`82f44eb`](https://github.com/ljharb/find-value-locations/commit/82f44eb77af812c771b6a0f5ceab7d6b2795b05f)
+- [Deps] update `reflect.ownkeys` [`ec21489`](https://github.com/ljharb/find-value-locations/commit/ec21489287b637cdbab116a0f9b008cc6294b1c5)
+
 ## [v2.0.4](https://github.com/ljharb/find-value-locations/compare/v2.0.3...v2.0.4) - 2022-10-26
 
 ### Commits
