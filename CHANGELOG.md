@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0](https://github.com/ljharb/find-value-locations/compare/v2.0.5...v2.1.0) - 2024-12-15
+
+### Commits
+
+- [New] add types [`03c502f`](https://github.com/ljharb/find-value-locations/commit/03c502fc0eb8a3012d9bff82ee6e052bd5dc6ffc)
+- [actions] split out node 10-20, and 20+ [`1b5c60c`](https://github.com/ljharb/find-value-locations/commit/1b5c60cd125c09a64d3eacd3e617776d7bae8e69)
+- [Tests] add some coverage [`be19564`](https://github.com/ljharb/find-value-locations/commit/be19564d564cbabdc2cfaba4ae64ff010966b819)
+- [Dev Deps] update `@ljharb/eslint-config`, `auto-changelog`, `npmignore`, `object.assign`, `tape` [`0bb6605`](https://github.com/ljharb/find-value-locations/commit/0bb66051b7266a70a10cdc4551f426a9135b212c)
+- [Deps] update `call-bind`, `object-is`, `reflect.ownkeys`, `safe-array-concat` [`83af42a`](https://github.com/ljharb/find-value-locations/commit/83af42aab7bcae232b5a20192a58009aaf5bfcf0)
+- [Refactor] use `call-bound` directly [`0c18f32`](https://github.com/ljharb/find-value-locations/commit/0c18f32c4c2c00ac714878209a83e2ce7eea1708)
+- [Robustness] use `gopd` [`1353de8`](https://github.com/ljharb/find-value-locations/commit/1353de86b7070c58ce42cafdde54d8680f2e18df)
+- [Tests] replace `aud` with `npm audit` [`89e9e47`](https://github.com/ljharb/find-value-locations/commit/89e9e47413f7dded9898f81fcb80d45feac34eb3)
+- [readme] remove dead badges [`de72cbf`](https://github.com/ljharb/find-value-locations/commit/de72cbf0dc35cd5a1e8b2f5ebc8d452bbb78504f)
+- [meta] add `sideEffects` flag [`d44ac16`](https://github.com/ljharb/find-value-locations/commit/d44ac1691e52d4cfb3235ff34062bb43a9416924)
+- [Dev Deps] add missing peer dep [`72fbd02`](https://github.com/ljharb/find-value-locations/commit/72fbd02e31e912b626d10c09a8200a13c1a9bc03)
+
 ## [v2.0.5](https://github.com/ljharb/find-value-locations/compare/v2.0.4...v2.0.5) - 2023-04-20
 
 ### Commits
