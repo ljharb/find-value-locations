@@ -1,8 +1,5 @@
 'use strict';
 
-/* eslint
-*/
-
 var test = require('tape');
 var findValue = require('../');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
@@ -16,7 +13,9 @@ var defaultDescriptor = {
 };
 
 test('requires something coercible to an object', function (t) {
+	// @ts-expect-error
 	t['throws'](function () { findValue(null); }, TypeError, 'null throws');
+	// @ts-expect-error
 	t['throws'](function () { findValue(); }, TypeError, 'undefined throws');
 	t.end();
 });
@@ -39,14 +38,18 @@ test('finds own properties', function (t) {
 });
 
 test('finds multiple values', function (t) {
+	/** @constructor */
 	var Foo = function Foo() {};
+	/** @constructor */
 	var Bar = function Bar() {};
+	/** @constructor */
 	var Baz = function Baz() {};
 
 	Bar.prototype = new Baz();
 	Foo.prototype = new Bar();
 
 	Baz.prototype.property = value;
+	// @ts-expect-error TODO FIXME
 	Foo.prototype.property = value;
 
 	var tuples = findValue(new Foo(), value);
@@ -74,15 +77,20 @@ test('finds multiple values', function (t) {
 test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 	var sym = Symbol('symbol');
 
+	/** @constructor */
 	var Foo = function Foo() {};
+	/** @constructor */
 	var Bar = function Bar() {};
+	/** @constructor */
 	var Baz = function Baz() {};
 
 	Bar.prototype = new Baz();
 	Foo.prototype = new Bar();
 
 	Baz.prototype.property = value;
+	// @ts-expect-error TODO FIXME
 	Foo.prototype[sym] = value;
+	// @ts-expect-error TODO FIXME
 	Foo.prototype.property = value;
 
 	var tuples = findValue(new Foo(), value);
@@ -97,6 +105,7 @@ test('finds Symbols too', { skip: !hasSymbols }, function (t) {
 		'new Foo has string and symbol properties that hold "value"'
 	);
 
+	/** @type {import('..').ValueLocation[]} */
 	var expectedTuples = [
 		[
 			Array.prototype,

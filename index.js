@@ -11,6 +11,7 @@ var gOPD = require('gopd');
 var $push = callBound('Array.prototype.push');
 var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
 
+/** @type {NonNullable<typeof gOPD>} */
 var getDescriptor = function getPropertyDescriptor(object, key) {
 	if (gOPD) {
 		return gOPD(object, key);
@@ -23,9 +24,11 @@ var getDescriptor = function getPropertyDescriptor(object, key) {
 	};
 };
 
+/** @type {(obj: {}, value: unknown) => import('.').ValueLocation[]} */
 var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
+	/** @type {import('.').ValueLocation[]} */
 	var props = [];
-	var addTupleIfValue = function addTupleIfValueMatches(key) {
+	forEach(ownKeys(object), function (key) {
 		try {
 			if (is(object[key], value)) {
 				$push(props, [
@@ -35,12 +38,13 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 				]);
 			}
 		} catch (e) { /**/ }
-	};
-	forEach(ownKeys(object), addTupleIfValue);
+	});
 	return props;
 };
 
+/** @type {(obj: {}, value: unknown) => import('.').ValueLocation[]} */
 var findKeys = function findKey(within, value) {
+	/** @type {import('.').ValueLocation[]} */
 	var found = [];
 	forEach(safeConcat([within], protochain(within)), function (proto) {
 		found = safeConcat(found, getOwnPropertiesWithValue(proto, value));
@@ -48,7 +52,8 @@ var findKeys = function findKey(within, value) {
 	return found;
 };
 
-module.exports = function findValueLocation(object, value) {
+/** @type {import('.')} */
+module.exports = function findValueLocations(object, value) {
 	if (typeof object === 'undefined' || object === null) {
 		throw new TypeError('object param must not be null or undefined');
 	}
