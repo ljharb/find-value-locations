@@ -7,6 +7,7 @@ var test = require('tape');
 var findValue = require('../');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 var assign = require('object.assign');
+var hasProto = require('has-proto')();
 
 var defaultDescriptor = {
 	configurable: true,
@@ -120,5 +121,34 @@ test('does not throw when a getter throws', { skip: typeof Object.defineProperty
 	});
 	t['throws'](function () { return thrower.boom; }, RangeError, 'object with throw-on-get property throws on get');
 	t.doesNotThrow(function () { findValue(thrower); }, 'object with throw-on-get property does not throw on findValue');
+	t.end();
+});
+
+test('null objects', { skip: !hasProto }, function (t) {
+	var obj = { __proto__: null, a: 42, b: null };
+	t.deepEqual(
+		findValue(obj, null),
+		[[obj, 'b', assign({ value: null }, defaultDescriptor)]],
+		'own property on a null object is found'
+	);
+
+	var nested = { __proto__: obj, c: 42, d: null };
+	t.deepEqual(
+		findValue(nested, null),
+		[
+			[nested, 'd', assign({ value: null }, defaultDescriptor)],
+			[obj, 'b', assign({ value: null }, defaultDescriptor)]
+		],
+		'own property on a nested null object is found'
+	);
+	t.deepEqual(
+		findValue(nested, 42),
+		[
+			[nested, 'c', assign({ value: 42 }, defaultDescriptor)],
+			[obj, 'a', assign({ value: 42 }, defaultDescriptor)]
+		],
+		'own property on a nested null object is found'
+	);
+
 	t.end();
 });
