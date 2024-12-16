@@ -5,7 +5,7 @@ var forEach = require('for-each');
 var protochain = require('protochain');
 var ownKeys = require('reflect.ownkeys');
 var safeConcat = require('safe-array-concat');
-var callBound = require('call-bind/callBound');
+var callBound = require('call-bound');
 
 var $push = callBound('Array.prototype.push');
 var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
