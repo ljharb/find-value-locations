@@ -6,10 +6,10 @@ var protochain = require('protochain');
 var ownKeys = require('reflect.ownkeys');
 var safeConcat = require('safe-array-concat');
 var callBound = require('call-bound');
+var gOPD = require('gopd');
 
 var $push = callBound('Array.prototype.push');
 var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
-var gOPD = Object.getOwnPropertyDescriptor;
 
 var getDescriptor = function getPropertyDescriptor(object, key) {
 	if (gOPD) {
