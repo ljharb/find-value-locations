@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.1](https://github.com/ljharb/find-value-locations/compare/v2.1.0...v2.1.1) - 2024-12-28
+
+### Commits
+
+- [Refactor] avoid using array push [`91e1b61`](https://github.com/ljharb/find-value-locations/commit/91e1b61d67930680833fca6b59bb0b05b6e20c27)
+- [Dev Deps] update `@arethetypeswrong/cli`, `@ljharb/tsconfig`, `@types/tape`, `object.assign` [`c1a1cad`](https://github.com/ljharb/find-value-locations/commit/c1a1cad860fb320bae29475f5c1390d1fbcd8023)
+- [Refactor] use `own-keys` instead of `reflect.ownkeys` [`b01cd53`](https://github.com/ljharb/find-value-locations/commit/b01cd5378ec59f6049d114df179a1ea66fb1922d)
+- [Fix] in pre-descriptor envs, basically nothing is nonconfigurable [`ae23c13`](https://github.com/ljharb/find-value-locations/commit/ae23c13b545bddc0cb578c866b8c8fb374653133)
+
 ## [v2.1.0](https://github.com/ljharb/find-value-locations/compare/v2.0.5...v2.1.0) - 2024-12-15
 
 ### Commits
