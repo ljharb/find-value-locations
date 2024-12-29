@@ -16,7 +16,7 @@ var getDescriptor = function getPropertyDescriptor(object, key) {
 		return gOPD(object, key);
 	}
 	return {
-		configurable: false,
+		configurable: true,
 		enumerable: $isEnumerable(object, key),
 		value: object[key],
 		writable: true
