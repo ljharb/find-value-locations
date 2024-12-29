@@ -8,7 +8,6 @@ var safeConcat = require('safe-array-concat');
 var callBound = require('call-bound');
 var gOPD = require('gopd');
 
-var $push = callBound('Array.prototype.push');
 var $isEnumerable = callBound('Object.prototype.propertyIsEnumerable');
 
 /** @type {NonNullable<typeof gOPD>} */
@@ -31,11 +30,12 @@ var getOwnPropertiesWithValue = function getOwnProperties(object, value) {
 	forEach(ownKeys(object), function (key) {
 		try {
 			if (is(object[key], value)) {
-				$push(props, [
+				props[props.length] = [
 					object,
 					key,
-					getDescriptor(object, key)
-				]);
+					// eslint-disable-next-line no-extra-parens
+					/** @type {PropertyDescriptor} */ (getDescriptor(object, key))
+				];
 			}
 		} catch (e) { /**/ }
 	});
